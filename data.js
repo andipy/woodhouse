@@ -5,6 +5,7 @@ let place = {
     is_visible: true,
     name: "name created by us",
     description: "place description lorem ipsum lorem ipsum",
+    rating: 6.7,
     posted_by: "user_id",
     location: {
         general_context: "Mountain",
@@ -12,11 +13,11 @@ let place = {
         region: "Valle d'Aosta",
         province: "AO",
         city: "Brusson",
+        altitude: 1870,
         geolocation: {
             latitude: 57372.91,
             longitude: 128271.10
-        },
-        altitude: 1870
+        }
     },
     site_info: {
         type: "Building ground",
@@ -25,7 +26,8 @@ let place = {
         floor_numer: 3,
         building_materials: ["rock", "wood"],
         use: "Residential",
-        landscape_boundaries: true
+        landscape_boundaries: true,
+        historic_boundaries: true
     },
     sale_info: {
         is_for_sale: true,
@@ -47,7 +49,6 @@ let place = {
             email: "agency@gmail.com"
         }
     },
-    rating: 6.7,
     turist_hype_rating: {
         rating: 5.4,
         reason: "description input by the user"

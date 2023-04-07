@@ -9,43 +9,93 @@
 </head>
 <body>
     <nav class="py-2 mb-4 fixed w-full backdrop-blur-sm bg-black/30 z-10">
-        <div class="w-10/12 mx-auto flex justify-end items-center">
+        <div class="w-11/12 md:w-8/12 mx-auto flex justify-end items-center">
             <button class="py-2 px-4 bg-cyan-800 text-white rounded-md">Edit</button>
         </div>
     </nav>
     <div class="w-full h-50 relative flex items-center justify-center">
         <img class="w-full h-[50vh] object-cover" src="assets/images/house_01_01.jpg">
         <div class="absolute bottom-0 w-full py-3 backdrop-blur-sm bg-black/30">
-            <div class="w-10/12 mx-auto">
-                <h1 class="text-2xl text-white font-semibold">Casa nel bosco, nome della casa</h1>
+            <div class="w-11/12 md:w-8/12 mx-auto flex justify-between">
+                <h1 class="text-lg md:text-2xl text-white font-semibold">Casa nel bosco, nome della casa</h1>
             </div>
         </div>
     </div>
-    <div class="w-10/12 mx-auto">
-        <div class="flex my-2 gap-4">
-            <div id="description" class="md:w-1/2">
+    <div class="w-11/12 md:w-8/12 mx-auto">
+        <div class="flex flex-col md:flex-row my-2 gap-4">
+            <div id="description" class="flex flex-col md:w-1/2 gap-2">
                 <p class="text-md">Descrizione casa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, fugiat.</p>
+                <div class="flex items-center gap-2 font-semibold">
+                    <h4>Rating</h4>
+                    <span>6/7</span>
+                </div>
             </div>
 
-            <div id="location" class="flex flex-col gap-1 md:w-1/4">
+            <div id="location" class="flex flex-col gap-1 w-full md:w-1/4">
                 <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Mountain</span>
                 <span>Italy</span>
                 <span>Valle D'Aosta</span>
                 <span>AO</span>
                 <span>Brusson</span>
+                <span>1870 metri</span>
                 <div class="flex items-center py-1 px-2 rounded-full bg-sky-200 self-start gap-1">
                     <img class="w-4 h-4" src="assets/icons/icon-geolocation.svg" alt="">
                     <span class="underline text-xs font-semibold">Geolocation</span>
                 </div>
             </div>
 
-            <div id="posted-by" class="flex flex-col gap-1 md:w-1/4">
+            <div id="posted-by" class="flex flex-col gap-1 w-full md:w-1/4">
                 <p>Posted by:</p>
                 <div class="flex items-center gap-2">
                     <img class="w-10 h-10 rounded-full" src="assets/avatars/louis.jpg" alt="">
                     <span class="font-semibold">Louis A.</span>
                 </div>
                 <span class="text-xs py-1 px-2 rounded-full bg-gray-200 self-start">13 March 2023</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row my-10 gap-4">
+            <div id="building-info" class="flex flex-col gap-1 w-full md:w-1/2">
+                <h3 class="text-xl font-bold">Building info</h3>
+                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Rudere</span>
+                <span>Struttura recuperabile</span>
+                <span>Costruzione del 1920</span>
+                <span>3 piani</span>
+                <span>Destinazione d'uso: Residenziale</span>
+                <span>Vincoli paesaggistici: Si</span>
+                <span>Vincoli soprintendenza: Si</span>
+                <div>
+                    <p>Materiali:</p>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Pietra</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Legno</span>
+                </div>
+            </div>
+
+            <div id="selling-info" class="flex flex-col gap-1 w-full md:w-1/4">
+                
+                <h3 class="text-xl font-bold">Selling info</h3>
+                <div class="flex items-center gap-2">
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">In vendita</span>
+                    <span>Euro 36'000</span>
+                </div>
+                <span>Il proprietario è un genovese che ha fatto un acquisto rivelatosi sbagliato e ha bisogno di sbarazzarsi della proprietà</span>
+                <span class="underline text-cyan-700">Link all'annuncio</span>                
+            </div>
+
+            <div id="contancts" class="flex flex-col gap-1 w-full md:w-1/4">
+                <h3 class="text-xl font-bold">Contatti</h3>
+                <div class="flex flex-col">
+                    <h5 class="text-md font-semibold">Proprietario</h5>
+                    <p class="py-1 px-2 rounded-full bg-gray-200 self-start">Nome cognome</p>
+                    <a href="tel:+393472882753">+393472882753</a>
+                    <a href="mailto:owner@gmail.com">owner@gmail.com</a>
+                </div>
+                <div class="flex flex-col mt-4">
+                    <h5 class="text-md font-semibold">Agenzia</h5>
+                    <p class="py-1 px-2 rounded-full bg-gray-200 self-start">Nome cognome</p>
+                    <a href="tel:+393397081771">+393397081771</a>
+                    <a href="mailto:agency@gmail.com">agency@gmail.com</a>
+                </div>
             </div>
         </div>
     </div>
