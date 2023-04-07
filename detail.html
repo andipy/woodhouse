@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
+    <title>Wood House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="py-2 mb-4 fixed w-full backdrop-blur-sm bg-black/30 z-10">
+        <div class="w-10/12 mx-auto flex justify-end items-center">
+            <button class="py-2 px-4 bg-cyan-800 text-white rounded-md">Edit</button>
+        </div>
+    </nav>
+    <div class="w-full h-50 relative flex items-center justify-center">
+        <img class="w-full h-[50vh] object-cover" src="assets/images/house_01_01.jpg">
+        <div class="absolute bottom-0 w-full py-3 backdrop-blur-sm bg-black/30">
+            <div class="w-10/12 mx-auto">
+                <h1 class="text-2xl text-white font-semibold">Casa nel bosco, nome della casa</h1>
+            </div>
+        </div>
+    </div>
+    <div class="w-10/12 mx-auto">
+        <div class="flex my-2 gap-4">
+            <div id="description" class="md:w-1/2">
+                <p class="text-md">Descrizione casa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, fugiat.</p>
+            </div>
+
+            <div id="location" class="flex flex-col gap-1 md:w-1/4">
+                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Mountain</span>
+                <span>Italy</span>
+                <span>Valle D'Aosta</span>
+                <span>AO</span>
+                <span>Brusson</span>
+                <div class="flex items-center py-1 px-2 rounded-full bg-sky-200 self-start gap-1">
+                    <img class="w-4 h-4" src="assets/icons/icon-geolocation.svg" alt="">
+                    <span class="underline text-xs font-semibold">Geolocation</span>
+                </div>
+            </div>
+
+            <div id="posted-by" class="flex flex-col gap-1 md:w-1/4">
+                <p>Posted by:</p>
+                <div class="flex items-center gap-2">
+                    <img class="w-10 h-10 rounded-full" src="assets/avatars/louis.jpg" alt="">
+                    <span class="font-semibold">Louis A.</span>
+                </div>
+                <span class="text-xs py-1 px-2 rounded-full bg-gray-200 self-start">13 March 2023</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

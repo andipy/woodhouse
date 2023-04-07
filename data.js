@@ -3,9 +3,9 @@ let place = {
     created_at: "timestamp",
     updated_at: "timestamp",
     is_visible: true,
-    posted_by: "user_id",
     name: "name created by us",
     description: "place description lorem ipsum lorem ipsum",
+    posted_by: "user_id",
     location: {
         general_context: "Mountain",
         country: "Italy",
