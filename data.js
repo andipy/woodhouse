@@ -1,12 +1,12 @@
 let place = {
     id: "",
     created_at: "timestamp",
+    posted_by: "user_id",
     updated_at: "timestamp",
     is_visible: true,
     name: "name created by us",
     description: "place description lorem ipsum lorem ipsum",
-    rating: 6.7,
-    posted_by: "user_id",
+    rating: 6.7,    
     location: {
         general_context: "Mountain",
         altitude: 1870,
@@ -34,6 +34,24 @@ let place = {
             building_size: 100,
             building_index: 1.1,
         },
+        utilities: [
+            {
+                electricity: true,
+                notes: ""
+            },{
+                water: true,
+                notes: ""
+            },{
+                drain: true,
+                notes: ""
+            },{
+                gas: true,
+                notes: ""
+            },{
+                internet: true,
+                notes: ""
+            }
+        ],
         building_materials: ["rock", "wood"],
         condition: "La struttura muraria principale è recuperabile. Il tetto è completamente da rifare, così come le pavimentazioni",
         plans: [
@@ -81,7 +99,7 @@ let place = {
     },
     turist_hype_rating: {
         rating: 5.4,
-        reason: "description input by the user"
+        description: "description input by the user"
     },
     accessibily: {
         summer: "Super easy",
