@@ -9,25 +9,54 @@ let place = {
     posted_by: "user_id",
     location: {
         general_context: "Mountain",
-        country: "Italy",
-        region: "Valle d'Aosta",
-        province: "AO",
-        city: "Brusson",
         altitude: 1870,
+        address: "Via Bella",
+        number: 67,
+        zip_code: 21901,
+        city: "Brusson",
+        province: "AO",
+        country: "Italy",
+        region: "Valle d'Aosta",        
         geolocation: {
             latitude: 57372.91,
             longitude: 128271.10
         }
     },
     site_info: {
-        type: "Building ground",
-        condition: "to demolish and redo",
-        building_year: 1971,
-        floor_numer: 3,
-        building_materials: ["rock", "wood"],
+        type: "Rudere",
         use: "Residential",
+        floor_number: 3,
+        building_year: 1971,
         landscape_boundaries: true,
-        historic_boundaries: true
+        historic_boundaries: true,
+        measures: {
+            site_size: 3200,
+            building_size: 100,
+            building_index: 1.1,
+        },
+        building_materials: ["rock", "wood"],
+        condition: "La struttura muraria principale è recuperabile. Il tetto è completamente da rifare, così come le pavimentazioni",
+        plans: [
+            {
+                id: "",
+                created_at: "timestamp",
+                updated_at: "timestamp",
+                author_id: "",
+                author_avatar: "url",
+                author_username: "username",
+                media_type: "image",
+                media: "url"
+            },{
+                id: "",
+                created_at: "timestamp",
+                updated_at: "timestamp",
+                author_id: "",
+                author_avatar: "url",
+                author_username: "username",
+                media_type: "image",
+                media: "url"
+            },
+        ],
     },
     sale_info: {
         is_for_sale: true,
@@ -43,6 +72,7 @@ let place = {
             email: "owner@gmail.com"
         },
         agency: {
+            agency: "Agenzia piloni srl",
             name: "agency name",
             last_name: "agency last name",
             phone: "34627812192",
@@ -57,32 +87,6 @@ let place = {
         summer: "Super easy",
         winter: "Quite difficult in case it snows"
     },
-    measures: {
-        site_size: 3200,
-        building_size: 100,
-        building_index: 1.1,
-    },
-    plans: [
-        {
-            id: "",
-            created_at: "timestamp",
-            updated_at: "timestamp",
-            author_id: "",
-            author_avatar: "url",
-            author_username: "username",
-            media_type: "image",
-            media: "url"
-        },{
-            id: "",
-            created_at: "timestamp",
-            updated_at: "timestamp",
-            author_id: "",
-            author_avatar: "url",
-            author_username: "username",
-            media_type: "image",
-            media: "url"
-        },
-    ],
     medias: [
         {
             id: "",
@@ -105,22 +109,8 @@ let place = {
         }
     ],
     vegetation: {
-        type: "value coming from dropdown/input",
-        comments: [
-            {
-                id: "",
-                created_at: "timestamp",
-                updated_at: "timestamp",
-                author_id: "",
-                author_avatar: "url",
-                author_username: "username",
-                likes: [
-                    "user_id",
-                    "user_id",
-                    "user_id"
-                ]
-            }
-        ],
+        types: ["value coming from dropdown/input", "type_2_id"],
+        description: "Vegetazione tipica alpina, prevalenza di abeti con qualche faggio qua e là; massi a terra molto suggestivi e muschio, felci",
         medias: [
             {
                 id: "",
@@ -151,7 +141,6 @@ let place = {
             author_id: "",
             author_avatar: "url",
             author_username: "username",
-            content: "text written by the author of the post",
             medias: [
                 {
                     id: "",
@@ -173,6 +162,17 @@ let place = {
                     media: "url"
                 }
             ],
+            content: "text written by the author of the post",
+            liked_by: [
+                "user_id",
+                "user_id",
+                "user_id"
+            ],
+            saved_by: [
+                "user_id",
+                "user_id",
+                "user_id"
+            ],
             comments: [
                 {
                     id: "",
@@ -181,7 +181,12 @@ let place = {
                     author_id: "",
                     author_avatar: "url",
                     author_username: "username",
-                    content: "comment left by the commenter"
+                    content: "comment left by the commenter",
+                    liked_by: [
+                        "user_id",
+                        "user_id",
+                        "user_id"
+                    ],
                 },{
                     id: "",
                     created_at: "timestamp",
@@ -189,14 +194,15 @@ let place = {
                     author_id: "",
                     author_avatar: "url",
                     author_username: "username",
-                    content: "comment left by the commenter"
+                    content: "comment left by the commenter",
+                    liked_by: [
+                        "user_id",
+                        "user_id",
+                        "user_id"
+                    ],
                 },
             ],
-            likes: [
-                "user_id",
-                "user_id",
-                "user_id"
-            ]            
+                        
         }
     ]
 }

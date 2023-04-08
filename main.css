@@ -1,0 +1,16 @@
+:root {
+    --scrollbar-bg: #F0F5F8;
+    --scrollbar-marker: #67757d;
+}
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0px;
+    display: none;
+}

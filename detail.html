@@ -5,25 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
     <title>Wood House</title>
+    <link rel="stylesheet" href="main.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <nav class="py-2 mb-4 fixed w-full backdrop-blur-sm bg-black/30 z-10">
+<body class="example">
+    <nav class="py-2 mb-4 fixed w-full backdrop-blur-sm bg-black/10 z-10">
         <div class="w-11/12 md:w-8/12 mx-auto flex justify-end items-center">
-            <button class="py-2 px-4 bg-cyan-800 text-white rounded-md">Edit</button>
+            <button class="py-2 px-4 bg-cyan-800 text-white rounded-md text-sm">Edit</button>
         </div>
     </nav>
-    <div class="w-full h-50 relative flex items-center justify-center">
-        <img class="w-full h-[50vh] object-cover" src="assets/images/house_01_01.jpg">
+
+    <div class="w-full relative flex items-center justify-center">
+        <img class="w-full h-[40vh] md:h-[50vh] object-cover" src="assets/images/house_01_01.jpg">
         <div class="absolute bottom-0 w-full py-3 backdrop-blur-sm bg-black/30">
-            <div class="w-11/12 md:w-8/12 mx-auto flex justify-between">
+            <div class="w-11/12 md:w-8/12 mx-auto flex justify-between items-center">
+                
                 <h1 class="text-lg md:text-2xl text-white font-semibold">Casa nel bosco, nome della casa</h1>
+
+                <div id="posted-by" class="flex flex-col gap-1">
+                    <div class="flex items-center gap-2">
+                        <img class="w-8 h-8 rounded-full" src="assets/avatars/louis.jpg" alt="">
+                        <div class="flex flex-col">
+                            <span class="font-semibold text-white">Louis A.</span>
+                            <span class="text-white text-xs">13 March 2023</span>
+                        </div>
+                    </div>                    
+                </div>
             </div>
         </div>
     </div>
+
     <div class="w-11/12 md:w-8/12 mx-auto">
-        <div class="flex flex-col md:flex-row my-2 gap-4">
-            <div id="description" class="flex flex-col md:w-1/2 gap-2">
+        <section class="flex flex-col md:flex-row my-2 gap-4">
+
+            <div id="location" class="flex flex-col gap-1 md:w-1/2">
+                <h3 class="text-xl font-bold">Dove</h3>
+                <div class="flex items-center gap-1 flex-wrap">
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Mountain</span>
+                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">1872 mt</span>
+                </div>
+                <span>Via Bella, 67</span>
+                <div class="flex items-center gap-1">
+                    <span>21091</span>
+                    <span>Brusson</span>
+                    <span>(AO)</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span>Valle D'Aosta,</span>
+                    <span>Italia</span>
+                </div>
+                <div class="flex items-center py-1 px-2 rounded-full bg-sky-200 self-start gap-1">
+                    <img class="w-4 h-4" src="assets/icons/icon-geolocation.svg" alt="">
+                    <span class="underline text-xs font-semibold">Geolocation</span>
+                </div>
+            </div>
+
+            <div id="description" class="flex flex-col gap-2 md:w-1/2">
                 <p class="text-md">Descrizione casa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium, fugiat.</p>
                 <div class="flex items-center gap-2 font-semibold">
                     <h4>Rating</h4>
@@ -31,58 +68,51 @@
                 </div>
             </div>
 
-            <div id="location" class="flex flex-col gap-1 w-full md:w-1/4">
-                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Mountain</span>
-                <span>Italy</span>
-                <span>Valle D'Aosta</span>
-                <span>AO</span>
-                <span>Brusson</span>
-                <span>1870 metri</span>
-                <div class="flex items-center py-1 px-2 rounded-full bg-sky-200 self-start gap-1">
-                    <img class="w-4 h-4" src="assets/icons/icon-geolocation.svg" alt="">
-                    <span class="underline text-xs font-semibold">Geolocation</span>
-                </div>
-            </div>
+            
+        </section>
 
-            <div id="posted-by" class="flex flex-col gap-1 w-full md:w-1/4">
-                <p>Posted by:</p>
-                <div class="flex items-center gap-2">
-                    <img class="w-10 h-10 rounded-full" src="assets/avatars/louis.jpg" alt="">
-                    <span class="font-semibold">Louis A.</span>
-                </div>
-                <span class="text-xs py-1 px-2 rounded-full bg-gray-200 self-start">13 March 2023</span>
-            </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row my-10 gap-4">
-            <div id="building-info" class="flex flex-col gap-1 w-full md:w-1/2">
+        <section class="flex flex-col md:flex-row my-10 gap-4">
+            <article id="building-info" class="flex flex-col gap-2 w-full md:w-1/2">
                 <h3 class="text-xl font-bold">Building info</h3>
-                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Rudere</span>
-                <span>Struttura recuperabile</span>
-                <span>Costruzione del 1920</span>
-                <span>3 piani</span>
-                <span>Destinazione d'uso: Residenziale</span>
-                <span>Vincoli paesaggistici: Si</span>
-                <span>Vincoli soprintendenza: Si</span>
-                <div>
-                    <p>Materiali:</p>
+                <div class="flex items-center gap-1 flex-wrap">
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Rudere</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Residenziale</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">3 piani</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Anno 1920</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Vincoli paesaggistici</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Vincoli soprintendenza</span>
+                </div>
+                <div class="mt-2">
+                    <h3 class="text-md font-semibold">Dimensioni</h3>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Terreno 3200mq</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Edificio 90mq</span>
+                </div>
+                <div class="mt-2">
+                    <h3 class="text-md font-semibold">Materiali</h3>
                     <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Pietra</span>
                     <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Legno</span>
                 </div>
-            </div>
+                <div class="mt-2">
+                    <h3 class="text-md font-semibold">Condizioni</h3>
+                    <p>La struttura muraria principale è recuperabile. Il tetto è completamente da rifare, così come le pavimentazioni</p>
+                </div>
+                <div class="mt-2 flex items-center py-1 px-2 rounded-full bg-sky-200 self-start gap-1">
+                    <img class="w-4 h-4" src="assets/icons/icon-docs.svg" alt="">
+                    <span class="underline text-xs font-semibold">Disegni tecnici</span>
+                </div>
+            </article>
 
-            <div id="selling-info" class="flex flex-col gap-1 w-full md:w-1/4">
-                
+            <article id="selling-info" class="flex flex-col gap-2 w-full md:w-1/4">                
                 <h3 class="text-xl font-bold">Selling info</h3>
                 <div class="flex items-center gap-2">
                     <span class="py-1 px-2 rounded-full bg-gray-200 self-start">In vendita</span>
-                    <span>Euro 36'000</span>
+                    <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Euro 36'000</span>
                 </div>
                 <span>Il proprietario è un genovese che ha fatto un acquisto rivelatosi sbagliato e ha bisogno di sbarazzarsi della proprietà</span>
                 <span class="underline text-cyan-700">Link all'annuncio</span>                
-            </div>
+            </article>
 
-            <div id="contancts" class="flex flex-col gap-1 w-full md:w-1/4">
+            <article id="contancts" class="flex flex-col gap-2 w-full md:w-1/4">
                 <h3 class="text-xl font-bold">Contatti</h3>
                 <div class="flex flex-col">
                     <h5 class="text-md font-semibold">Proprietario</h5>
@@ -90,13 +120,125 @@
                     <a href="tel:+393472882753">+393472882753</a>
                     <a href="mailto:owner@gmail.com">owner@gmail.com</a>
                 </div>
-                <div class="flex flex-col mt-4">
-                    <h5 class="text-md font-semibold">Agenzia</h5>
+                <div class="flex flex-col mt-2">
+                    <h5 class="text-md font-semibold">Agenzia Pilini Srl</h5>
                     <p class="py-1 px-2 rounded-full bg-gray-200 self-start">Nome cognome</p>
                     <a href="tel:+393397081771">+393397081771</a>
                     <a href="mailto:agency@gmail.com">agency@gmail.com</a>
                 </div>
+            </article>
+        </section>
+
+        <section>
+            <h3 class="text-xl font-bold">Vegetazione</h3>
+            <div class="flex items-center gap-1">
+                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Faggi</span>
+                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Larici</span>
+                <span class="py-1 px-2 rounded-full bg-gray-200 self-start">Abeti</span>
             </div>
+
+            <p>Vegetazione tipica alpina, prevalenza di abeti con qualche faggio qua e là; massi a terra molto suggestivi e muschio, felci</p>            
+
+            <div class="flex overflow-x-scroll gap-2 overflow-y-hidden w-[112.5%] ml-[-8%] px-[8%] mt-2 md:overflow-x-visible md:overflow-y-visible md:flex-wrap md:w-[100%] md:ml-[0%] md:px-[0%]">
+                <img class="object-cover h-64" src="assets/images/veg_1.jpg" alt="">
+                <img class="object-cover h-64" src="assets/images/veg_2.jpg" alt="">
+                <img class="object-cover h-64" src="assets/images/veg_3.jpg" alt="">
+                <img class="object-cover h-64" src="assets/images/veg_4.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="pb-20 my-10">
+            <h3 class="text-xl font-bold mb-2">Post di dettaglio</h3>
+            <article class="mb-6">
+                <div id="posted-by" class="flex flex-col gap-1 w-full md:w-1/4">
+                    <div class="flex items-center gap-2">
+                        <img class="w-10 h-10 rounded-full" src="assets/avatars/louis.jpg" alt="">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Louis A.</span>
+                            <span class="text-xs">13 March 2023</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="flex overflow-x-scroll gap-2 overflow-y-hidden w-[112.5%] ml-[-8%] px-[8%] mt-2 md:overflow-x-visible md:overflow-y-visible md:flex-wrap md:w-[100%] md:ml-[0%] md:px-[0%]">
+                    <img class="object-cover h-64" src="assets/images/post_01_01.jpg" alt="">
+                    <img class="object-cover h-64" src="assets/images/post_01_02.jpg" alt="">
+                    <img class="object-cover h-64" src="assets/images/post_01_03.jpg" alt="">
+                </div>
+                <p class="text-md font-semibold mt-2">Varie foto della vista dal balcone</p>
+                <div class="flex justify-between mt-1">
+                    <div class="flex items-center gap-2">
+                        <img class="w-7 h-7" src="assets/icons/icon-favourite-unselected.svg" alt="">
+                        <img class="w-7 h-7" src="assets/icons/icon-comment-unselected.svg" alt="">
+                    </div>
+                    <div>
+                        <img class="w-7 h-7" src="assets/icons/icon-save-unselected.svg" alt="">
+                    </div>
+                </div>
+            </article>
+
+            <article class="mb-6">
+                <div id="posted-by" class="flex flex-col gap-1 w-full md:w-1/4">
+                    <div class="flex items-center gap-2">
+                        <img class="w-10 h-10 rounded-full" src="assets/avatars/louis.jpg" alt="">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Louis A.</span>
+                            <span class="text-xs">13 March 2023</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="mt-2">
+                    <img class="object-cover w-full" src="assets/images/veg_1.jpg" alt="">
+                </div>
+                <p class="text-md font-semibold mt-2">Percorso di accesso durante l'estate, assolutametne spettacolare, sembra di stare in una fiaba!</p>
+                <div class="flex justify-between mt-1">
+                    <div class="flex items-center gap-2">
+                        <img class="w-7 h-7" src="assets/icons/icon-favourite-unselected.svg" alt="">
+                        <img class="w-7 h-7" src="assets/icons/icon-comment-unselected.svg" alt="">
+                    </div>
+                    <div>
+                        <img class="w-7 h-7" src="assets/icons/icon-save-unselected.svg" alt="">
+                    </div>
+                </div>
+            </article>
+
+            <article class="mb-6">
+                <div id="posted-by" class="flex flex-col gap-1 w-full md:w-1/4">
+                    <div class="flex items-center gap-2">
+                        <img class="w-10 h-10 rounded-full" src="assets/avatars/louis.jpg" alt="">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Louis A.</span>
+                            <span class="text-xs">13 March 2023</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="mt-2">
+                    <img class="object-cover w-full" src="assets/images/post_03_01.jpg" alt="">
+                </div>
+                <p class="text-md font-semibold mt-2">Percorso di accesso durante l'inverno, completamente innevato, solo per i più coraggiosi ed avventurieri</p>
+                <div class="flex justify-between mt-1">
+                    <div class="flex items-center gap-2">
+                        <img class="w-7 h-7" src="assets/icons/icon-favourite-unselected.svg" alt="">
+                        <img class="w-7 h-7" src="assets/icons/icon-comment-unselected.svg" alt="">
+                    </div>
+                    <div>
+                        <img class="w-7 h-7" src="assets/icons/icon-save-unselected.svg" alt="">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1 my-2">
+                    <div class="flex items-center gap-2">
+                        <img class="w-6 h-6 rounded-full" src="assets/avatars/dani.jpg" alt="">
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold">Dani R.</span>
+                            <span class="text-xs">13 March 2023</span>
+                        </div>
+                    </div>
+                    <p class="text-sm">Difficile per moti arrivare d'inverno, soprattutto in ottica di piazzamento su airbnb, però veramente spettacolare per chi può permetterselo mentalmente e fisicamente</p>
+                </div>
+                <p class="font-bold text-sm">Vedi tutti e 6 i commenti</p>
+            </article>            
         </div>
     </div>
 </body>
