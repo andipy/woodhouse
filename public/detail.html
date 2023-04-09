@@ -15,11 +15,15 @@
                 <a class="w-8 h-8 flex items-center justify-center backdrop-blur-sm bg-black/60 rounded-full" href="index.html">
                     <img class="w-6 h-6" src="assets/icons/icon-arrow-back-white.svg" alt="">
                 </a>
-                <button class="py-2 px-4 bg-purple-800 text-white rounded-md text-sm">Edit</button>
             </div>
-        </nav>
+        </nav>        
 
         <div class="w-full relative flex items-center justify-center">
+            <nav class="py-2 w-full z-10 absolute top-0">
+                <div class="w-11/12 md:w-6/12 mx-auto flex justify-end items-center">
+                    <button class="py-2 px-4 bg-purple-600 text-white rounded-md text-sm">+ Add media</button>
+                </div>
+            </nav>
             <img class="w-full h-[40vh] md:h-[50vh] object-cover" src="assets/images/house_01_01.jpg">
             <div class="absolute bottom-0 w-full py-1 backdrop-blur-sm bg-black/30">
                 <div class="w-11/12 md:w-6/12 mx-auto flex justify-between items-center">                
@@ -112,8 +116,8 @@
                 </div>
             </article>
 
-            <div class="flex flex-col gap-2 md:w-1/2">
-                <article id="selling-info" class="flex flex-col gap-2 w-full md:w-1/2">                
+            <div class="flex flex-col gap-2 w-full md:w-1/2">
+                <article id="selling-info" class="flex flex-col gap-2 w-full">                
                     <h3 class="text-xl font-bold">Selling info</h3>
                     <div class="flex items-center gap-2">
                         <span class="py-1 px-2 rounded-full bg-purple-100 self-start">In vendita</span>
@@ -123,9 +127,9 @@
                     <span class="underline text-cyan-700">Link all'annuncio</span>                
                 </article>
 
-                <article id="contacts" class="flex flex-col gap-2 w-full md:w-1/2">
+                <article id="contacts" class="flex flex-col gap-2 w-full">
                     <h3 class="text-xl font-bold">Contatti</h3>
-                    <div id="contacts" class="flex flex-col md:flex-row gap-8 w-full md:w-1/2">
+                    <div id="contacts" class="flex flex-col md:flex-row gap-4 w-full">
                         <div class="flex flex-col">
                             <h5 class="text-md font-semibold">Proprietario</h5>
                             <p class="py-1 px-2 rounded-full bg-purple-100 self-start">Nome cognome</p>
