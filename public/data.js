@@ -1,8 +1,8 @@
 let place = {
     id: "",
     created_at: "timestamp",
-    posted_by: "user_id",
     updated_at: "timestamp",
+    posted_by: "user_id",    
     is_visible: true,
     name: "name created by us",
     description: "place description lorem ipsum lorem ipsum",
@@ -63,7 +63,7 @@ let place = {
                 author_avatar: "url",
                 author_username: "username",
                 media_type: "image",
-                media: "url"
+                media_url: "url"
             },{
                 id: "",
                 created_at: "timestamp",
@@ -72,7 +72,7 @@ let place = {
                 author_avatar: "url",
                 author_username: "username",
                 media_type: "image",
-                media: "url"
+                media_url: "url"
             },
         ],
     },
@@ -105,7 +105,7 @@ let place = {
         summer: "Super easy",
         winter: "Quite difficult in case it snows"
     },
-    medias: [
+    media: [
         {
             id: "",
             created_at: "timestamp",
@@ -114,7 +114,7 @@ let place = {
             author_avatar: "url",
             author_username: "username",
             media_type: "image",
-            media: "url"
+            media_url: "url"
         },{
             id: "",
             created_at: "timestamp",
@@ -123,13 +123,13 @@ let place = {
             author_avatar: "url",
             author_username: "username",
             media_type: "video",
-            media: "url"
+            media_url: "url"
         }
     ],
     vegetation: {
         types: ["value coming from dropdown/input", "type_2_id"],
         description: "Vegetazione tipica alpina, prevalenza di abeti con qualche faggio qua e là; massi a terra molto suggestivi e muschio, felci",
-        medias: [
+        media: [
             {
                 id: "",
                 created_at: "timestamp",
@@ -138,7 +138,7 @@ let place = {
                 author_avatar: "url",
                 author_username: "username",
                 media_type: "image",
-                media: "url"
+                media_url: "url"
             },{
                 id: "",
                 created_at: "timestamp",
@@ -147,80 +147,81 @@ let place = {
                 author_avatar: "url",
                 author_username: "username",
                 media_type: "image",
-                media: "url"
+                media_url: "url"
             }
         ]
-    },
-    posts: [
-        {
-            id: "",
-            created_at: "timestamp",
-            updated_at: "timestamp",
-            author_id: "",
-            author_avatar: "url",
-            author_username: "username",
-            medias: [
-                {
-                    id: "",
-                    created_at: "timestamp",
-                    updated_at: "timestamp",
-                    author_id: "",
-                    author_avatar: "url",
-                    author_username: "username",
-                    media_type: "image",
-                    media: "url"
-                },{
-                    id: "",
-                    created_at: "timestamp",
-                    updated_at: "timestamp",
-                    author_id: "",
-                    author_avatar: "url",
-                    author_username: "username",
-                    media_type: "image",
-                    media: "url"
-                }
-            ],
-            content: "text written by the author of the post",
-            liked_by: [
-                "user_id",
-                "user_id",
-                "user_id"
-            ],
-            saved_by: [
-                "user_id",
-                "user_id",
-                "user_id"
-            ],
-            comments: [
-                {
-                    id: "",
-                    created_at: "timestamp",
-                    updated_at: "timestamp",
-                    author_id: "",
-                    author_avatar: "url",
-                    author_username: "username",
-                    content: "comment left by the commenter",
-                    liked_by: [
-                        "user_id",
-                        "user_id",
-                        "user_id"
-                    ],
-                },{
-                    id: "",
-                    created_at: "timestamp",
-                    updated_at: "timestamp",
-                    author_id: "",
-                    author_avatar: "url",
-                    author_username: "username",
-                    content: "comment left by the commenter",
-                    liked_by: [
-                        "user_id",
-                        "user_id",
-                        "user_id"
-                    ],
-                },
-            ],
-                        
-        }
-    ]
+    }
 }
+
+let post = [
+    {
+        id: "",
+        place_id: "",
+        created_at: "timestamp",
+        updated_at: "timestamp",
+        author_id: "",
+        author_avatar: "url",
+        author_username: "username",
+        media: [
+            {
+                id: "",
+                created_at: "timestamp",
+                updated_at: "timestamp",
+                author_id: "",
+                author_avatar: "url",
+                author_username: "username",
+                media_type: "image",
+                media_url: "url"
+            },{
+                id: "",
+                created_at: "timestamp",
+                updated_at: "timestamp",
+                author_id: "",
+                author_avatar: "url",
+                author_username: "username",
+                media_type: "image",
+                media_url: "url"
+            }
+        ],
+        content: "text written by the author of the post",
+        liked_by: [
+            "user_id",
+            "user_id",
+            "user_id"
+        ],
+        saved_by: [
+            "user_id",
+            "user_id",
+            "user_id"
+        ],
+        comments: [
+            {
+                id: "",
+                created_at: "timestamp",
+                updated_at: "timestamp",
+                author_id: "",
+                author_avatar: "url",
+                author_username: "username",
+                content: "comment left by the commenter",
+                liked_by: [
+                    "user_id",
+                    "user_id",
+                    "user_id"
+                ],
+            },{
+                id: "",
+                created_at: "timestamp",
+                updated_at: "timestamp",
+                author_id: "",
+                author_avatar: "url",
+                author_username: "username",
+                content: "comment left by the commenter",
+                liked_by: [
+                    "user_id",
+                    "user_id",
+                    "user_id"
+                ],
+            },
+        ]                    
+    }
+]
