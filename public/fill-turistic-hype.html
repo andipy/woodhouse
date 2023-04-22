@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>Wood House</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="main.css">    
+    </head>
+    <body>
+        <nav id="top-bar" class="py-2 fixed w-full z-10 bg-white">
+            <div class="w-11/12 md:w-6/12 mx-auto flex flex-col gap-1">
+                <a class="w-8 h-8 flex items-center justify-center backdrop-blur-sm bg-black/60 rounded-full" href="index.html">
+                    <img class="w-6 h-6" src="assets/icons/icon-arrow-back-white.svg" alt="">
+                </a>
+                <h1 class="text-lg md:text-2xl text-black font-bold">Nome della casa</h1>
+            </div>        
+        </nav>
+
+        <main class="w-11/12 md:w-6/12 mx-auto pb-4">
+            <form class="flex flex-col gap-4">
+                <section class="flex flex-col gap-1">
+                    <h4 class="text-md md:text-2l text-black font-semibold">Touristic attractiveness</h4>
+                    <textarea type="text" rows="6" placeholder="Describe the turistic attractiveness of this place" class="w-full py-2 px-2 border border-solid rounded-lg border-gray-400"></textarea>
+                </section>            
+
+                <section class="flex flex-col gap-1">
+                    <h4 class="text-md md:text-2l text-black font-semibold">Touristic rating</h4>
+                    <input type="number" placeholder="Give this place a rating for its turistic attractiveness" class="w-full py-2 px-2 border border-solid rounded-lg border-gray-400">
+                </section>
+
+                <button class="py-3 px-4 bg-purple-600 text-white rounded-md text-sm">Save</button>
+            </form>
+        </main>
+    </body>
+    <script>
+        let topbar = document.getElementById("top-bar");
+        let topbarHeight = topbar.clientHeight;
+
+        let main = document.getElementsByTagName("main");
+        main[0].style.paddingTop = (topbarHeight * 1.1) + "px";
+    </script>
+</html>

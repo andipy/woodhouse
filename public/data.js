@@ -53,7 +53,7 @@ let place = {
             }
         ],
         building_materials: ["rock", "wood"],
-        condition: "La struttura muraria principale è recuperabile. Il tetto è completamente da rifare, così come le pavimentazioni",
+        conditions: "La struttura muraria principale è recuperabile. Il tetto è completamente da rifare, così come le pavimentazioni",
         plans: [
             {
                 id: "",
