@@ -9,7 +9,7 @@ const Post = ({ post }) => {
     const { id, created_at, author_avatar, author_username, media, content, comments } = post;
 
     return (
-        <article key={id} className="my-6">
+        <article key={id} className="mb-6">
             <div id="posted-by" className="flex flex-col gap-1 w-full md:w-1/4">
                 <div className="flex items-center gap-2">
                     <img className="w-10 h-10 rounded-full" src={author_avatar} alt="" />

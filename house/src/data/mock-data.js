@@ -216,36 +216,63 @@ export const allPlaces = [
             }
         },
         site_info: {
-            type: "Rudere",
-            use: "Residential",
-            floor_number: 3,
-            building_year: 1971,
-            landscape_boundaries: true,
-            historic_boundaries: true,
-            measures: {
-                site_size: 3200,
-                building_size: 100,
-                building_index: 1.1,
-            },
+            overview: [
+                {
+                    name: "Tipologia",
+                    value: "Rudere"
+                },{
+                    name: "Destinazione d'uso",
+                    value: "Residenziale"
+                },{
+                    name: "Piani",
+                    value: 3
+                },{
+                    name: "Anno di costruzione",
+                    value: 1971
+                },{
+                    name: "Vincoli paesaggistici",
+                    value: true
+                },{
+                    name: "Vincoli storici",
+                    value: false
+                }
+            ],
+            measures: [
+                {
+                    name: "Site size",
+                    size: 3200
+                },{
+                    name: "Building size",
+                    size: 98
+                },{
+                    name: "Building index",
+                    size: 1.1
+                }
+            ],
             utilities: [
                 {
-                    electricity: true,
+                    name: "Electricity",
+                    is_present: false,
                     notes: ""
                 },{
-                    water: true,
+                    name: "Water",
+                    is_present: true,
                     notes: ""
                 },{
-                    drain: true,
+                    name: "Drain",
+                    is_present: false,
                     notes: ""
                 },{
-                    gas: true,
+                    name: "Gas",
+                    is_present: true,
                     notes: ""
                 },{
-                    internet: true,
+                    name: "Internet",
+                    is_present: true,
                     notes: ""
                 }
             ],
-            building_materials: ["rock", "wood"],
+            building_materials: ["Rock", "Wood"],
             conditions: "La struttura muraria principale è recuperabile. Il tetto è completamente da rifare, così come le pavimentazioni",
             plans: [
                 {
