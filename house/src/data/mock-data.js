@@ -297,34 +297,46 @@ export const allPlaces = [
             ],
         },
         sale_info: {
-            is_for_sale: true,
-            selling_price: 36000,
+            overview: [
+                {
+                    name: "Vendita",
+                    value: true
+                },{
+                    name: "Prezzo",
+                    value: 36000
+                }
+            ],
             adv_url: "url",
-            reason_of_sale: "Il proprietario è un genovese che ha fatto un acquisto rivelatosi sbagliato e ha bisogno di sbarazzarsi della proprietà"
-        },
-        contacts: {
-            owner: {
-                name: "Ciccio",
-                last_name: "Frivolo",
-                phone: "34627812192",
-                email: "owner@gmail.com"
-            },
-            agency: {
-                agency: "Agenzia piloni srl",
-                name: "Magro",
-                last_name: "Perfinta",
-                phone: "34627812192",
-                email: "agency@gmail.com"
-            }
-        },
-        turist_hype_rating: {
-            rating: 7,
+            reason_of_sale: "Il proprietario è un genovese che ha fatto un acquisto rivelatosi sbagliato e ha bisogno di sbarazzarsi della proprietà",
+            contacts: [
+                {
+                    reference: "Owner",
+                    first_name: "Ciccio",
+                    last_name: "Frivolo",
+                    phone: "34627812192",
+                    email: "owner@gmail.com"
+                },{
+                    reference: "Agenzia piloni srl",
+                    first_name: "Magro",
+                    last_name: "Perfinta",
+                    phone: "34627812192",
+                    email: "agency@gmail.com"
+                }
+            ],
+        },        
+        tourist_attractiveness: {
+            rating: 6.8,
             description: "Il posto è spettacolare, il panorame mozzafiato, la vegetazione appena attorno l'edificio è da fiaba, la vista incredibile. Inoltre a 5 minuti a piedi partono molti sentieri per passeggiate estive, e a 25 minuti in auto ci sono gli impianti di sci di Pila d'inverno"
         },
-        accessibily: {
-            summer: "Completamente accessibile in qualsiasi condizione",
-            winter: "La strada per arrivare è asfaltata, ma la pendenza è importante, nei periodi di carico di neve le auto non attrezzate non riescono ad arrivare"
-        },
+        accessibily:[
+            {
+                season: "Summer",
+                description: "Completamente accessibile in qualsiasi condizione"
+            },{
+                season: "Winter",
+                description: "La strada per arrivare è asfaltata, ma la pendenza è importante, nei periodi di carico di neve le auto non attrezzate non riescono ad arrivare"
+            }
+        ],
         media: [
             {
                 id: "1",

@@ -1,8 +1,8 @@
 import React from "react";
 
-import Topbar from "../../navigation/topbar/topbar";
-import Container from "../../template/container/container";
-import { allPlaces } from "../../../data/mock-data";
+import Topbar from "../../components/navigation/topbar/topbar";
+import Container from "../../components/template/container/container";
+import { allPlaces } from "../../data/mock-data";
 
 const EditWhere = () => {
     return (

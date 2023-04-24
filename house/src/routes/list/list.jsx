@@ -1,9 +1,9 @@
 import React from "react";
 
-import Container from "../../template/container/container.jsx";
-import Topbar from "../../navigation/topbar/topbar.jsx";
-import ListItem from "../../list-item.jsx/list-item.jsx";
-import { allPlaces } from "../../../data/mock-data.js";
+import Container from "../../components/template/container/container.jsx";
+import Topbar from "../../components/navigation/topbar/topbar.jsx";
+import ListItem from "../../components/list-item.jsx/list-item.jsx";
+import { allPlaces } from "../../data/mock-data.js";
 
 const List = () => {
     return (

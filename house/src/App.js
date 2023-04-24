@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import List from "./components/routes/list/list.jsx";
-import Detail from "./components/routes/detail/detail.jsx";
-import EditWhere from "./components/routes/edit-where/edit-where.jsx";
+import List from "./routes/list/list.jsx";
+import Detail from "./routes/detail/detail.jsx";
+import EditWhere from "./routes/edit-where/edit-where.jsx";
 
 const App = () => {
   return (
