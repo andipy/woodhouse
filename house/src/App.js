@@ -6,6 +6,7 @@ import Detail from "./routes/detail/detail.jsx";
 import EditWhere from "./routes/edit-where/edit-where.jsx";
 import SignUp from "./routes/sign-up/sign-up.jsx";
 import LogIn from "./routes/log-in/log-in.jsx";
+import ResetPassword from "./routes/reset-password/reset-password.jsx";
 
 const App = () => {
 
@@ -29,6 +30,10 @@ const App = () => {
     },{
       slug: "places/:placeId/edit-where",
       element: <EditWhere />,
+      isPrivate: false
+    },{
+      slug: "your-email-to-recover-password",
+      element: <ResetPassword />,
       isPrivate: false
     }
   ]

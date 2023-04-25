@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { signUpWithEmailAndPassword } from "../../utilities/firebase/authentication/authentication.js";
 import { serverTimestamp } from "firebase/firestore";
 import { createUserDocumentOnSignUp } from "../../utilities/firebase/create-user-doc-on-signup/create-user-doc-on-signup.js";
+import { sendEmailToVerifyAccount } from "../../utilities/firebase/email-verification/email-verification.js";
 
 import Input from "../input/input.jsx";
 
@@ -83,6 +84,7 @@ const SignUpForm = () => {
                             role: "OWNER",
                             updatedAt: serverTimestamp()
                         });
+                        await sendEmailToVerifyAccount(user);
                         setSignUpFields(signUpFormFields);
                         navigate("/log-in");
                     }

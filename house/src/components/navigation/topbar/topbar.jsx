@@ -38,7 +38,7 @@ const Topbar = ({ topbarStyleExtention, place }) => {
                         <img className="w-6 h-6" src={IconBackArrow} alt="" />
                     </div>
                 }
-                {location.pathname.includes("house") && !location.pathname.includes("edit") &&
+                {location.pathname.includes("places") && !location.pathname.includes("edit") &&
                     <button className="py-2 px-4 bg-purple-600 text-white rounded-md text-sm">
                         + Add media
                     </button>

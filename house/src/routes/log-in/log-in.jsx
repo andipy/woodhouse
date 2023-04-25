@@ -14,6 +14,7 @@ const LogIn = () => {
             <p>Log in with email and password</p>
             <LogInForm />
             <button onClick={() => navigate("/sign-up")}>Go to sign up</button>
+            <button onClick={() => navigate("/your-email-to-recover-password")}>Recover password</button>
         </Container>
     )
 }
