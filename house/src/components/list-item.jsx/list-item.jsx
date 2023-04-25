@@ -5,7 +5,7 @@ import House from "../../assets/images/house_01_01.jpg"
 
 const ListItem = () => {
     return (
-        <Link to="/house/id">
+        <Link to="/places/id">
             <div className="flex flex-col md:flex-row gap-4 py-4 px-4 rounded-md border border-solid border-gray-300 hover:shadow-xl hover:border-none">
                 <img className="w-100 md:w-44 h-44 object-cover shrink-0 rounded-md" src={House} alt="" />
                 <div className="flex flex-col gap-2">
