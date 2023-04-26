@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from './contexts/auth-context/auth-context.jsx';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./utilities/firebase/firebase.js";
 
 import List from "./routes/list/list.jsx";
 import Detail from "./routes/detail/detail.jsx";
@@ -9,12 +11,33 @@ import SignUp from "./routes/sign-up/sign-up.jsx";
 import LogIn from "./routes/log-in/log-in.jsx";
 import ResetPassword from "./routes/reset-password/reset-password.jsx";
 import VerifyYourEmail from "./routes/verify-your-email/verify-your-email.jsx";
+import UploadProfilePicture from "./routes/upload-profile-picture/upload-profile-picture.jsx";
 
 const App = () => {
 
   const [currentUser, setCurrentUser] = useContext(AuthContext);
 
-  console.log(currentUser, "from app.js")
+  const [user, setUser] = useState({});  
+  useEffect(() => {
+    const getUserDoc = async () => {
+      try {
+        const docRef = doc(db, 'users', currentUser.uid);
+        const docSnap = await getDoc(docRef);
+    
+        if (docSnap.exists()) {
+            setUser(docSnap.data())
+        } else {
+            console.log("l'utente non esiste o non è loggato")
+        }
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
+
+    if (currentUser) {
+      getUserDoc();
+    }
+  }, [currentUser])
 
   const routes = [
     {
@@ -45,6 +68,10 @@ const App = () => {
       slug: "verify-your-email",
       element: <VerifyYourEmail />,
       isPrivate: false
+    },{
+      slug: "upload-profile-picture",
+      element: <UploadProfilePicture />,
+      isPrivate: true
     }
   ]
 
@@ -52,7 +79,11 @@ const App = () => {
     if (isPrivate) {
       if (currentUser) {
         if (currentUser.emailVerified) {
-          return element
+          if (!user.photoURL) {
+            return <UploadProfilePicture />
+          } else {
+            return element
+          }          
         } else {
           return <VerifyYourEmail />
         }
