@@ -4,6 +4,7 @@ import { signUpWithEmailAndPassword } from "../../utilities/firebase/authenticat
 import { serverTimestamp } from "firebase/firestore";
 import { createUserDocumentOnSignUp } from "../../utilities/firebase/create-user-doc-on-signup/create-user-doc-on-signup.js";
 import { sendEmailToVerifyAccount } from "../../utilities/firebase/email-verification/email-verification.js";
+import { auth } from "../../utilities/firebase/firebase.js";
 
 import Input from "../input/input.jsx";
 
@@ -77,14 +78,13 @@ const SignUpForm = () => {
                             createdAt: serverTimestamp(),
                             displayName: signUpFields.displayName,
                             email: user.email,
-                            emailVerified: user.emailVerified,
                             firstName: signUpFields.firstName,
                             lastName: signUpFields.lastName,
-                            profilePicture: user.photoURL,
+                            photoURL: user.photoURL,
                             role: "OWNER",
                             updatedAt: serverTimestamp()
                         });
-                        await sendEmailToVerifyAccount(user);
+                        await sendEmailToVerifyAccount(auth.currentUser)
                         setSignUpFields(signUpFormFields);
                         navigate("/log-in");
                     }
