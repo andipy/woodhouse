@@ -1,46 +1,49 @@
 import React from "react";
 
-import IconCommentInactive from "../../assets/icons/icon-comment-inactive.svg";
-import IconFavouriteInactive from "../../assets/icons/icon-favourite-inactive.svg";
-import IconSaveInactive from "../../assets/icons/icon-save-inactive.svg";
+const Vegetation = ({ place }) => {
 
-const Vegetation = ({ vegetation }) => {
-
-    const { types, description, media } = vegetation;
+    const { vegetation } = place;
 
     return (
         <section>
             <h3 className="text-xl font-bold">Vegetazione</h3>
             <div className="flex items-center gap-1">
-                {types.map((type, index) => {
+                {vegetation.types.map((type, index) => {
                     return (
                         <span key={index} className="py-1 px-2 rounded-full bg-purple-100 self-start">{type}</span>
                     )
                 })}
             </div>
 
-            <p>{description}</p>            
+            <p>{vegetation.description ? vegetation.description : "Descrivi la vegetaione del luogo"}</p>
 
-            {media.length === 1 &&
+            {vegetation.media.length === 0 &&
+                <div>
+                    <p>non ci sono immagini, caricale</p>
+                    <button>+ Carica immagine</button>
+                </div>
+            }
+
+            {vegetation.media.length === 1 &&
                 <div className="mt-2">
-                    {media.map(elem => {
-                        if ( elem.media_type === "image" ) {
-                            return <img key={elem.id} className="object-cover w-full" src={elem.media_url} alt="" />
+                    {vegetation.media?.map((elem, index) => {
+                        if ( elem.mediaType === "image" ) {
+                            return <img key={index} className="object-cover w-full" src={elem.media_url} alt="" />
                         }
-                        if ( elem.media_type === "video" ) {
-                            return <video key={elem.id} className="object-cover w-full" src={elem.media_url} controls={true}></video>
+                        if ( elem.mediaType === "video" ) {
+                            return <video key={index} className="object-cover w-full" src={elem.media_url} controls={true}></video>
                         }
                     })}                    
                 </div>
             }
-            {media.length > 1 &&
+            {vegetation.media.length > 1 &&
                 <div className="flex overflow-x-scroll gap-2 overflow-y-hidden w-[112.5%] ml-[-8%] px-[8%] mt-2 md:overflow-x-visible md:overflow-y-visible md:flex-wrap md:w-[100%] md:ml-[0%] md:px-[0%]">
-                    {media.map(elem => {
-                        if ( elem.media_type === "image" ) {
-                            return <img key={elem.id} className="object-cover h-64" src={elem.media_url} alt="" />
+                    {vegetation.media?.map((elem, index) => {
+                        if ( elem.mediaType === "image" ) {
+                            return <img key={index} className="object-cover h-64" src={elem.mediaURL} alt="" />
                         }
-                        if ( elem.media_type === "video" ) {
-                            return <video key={elem.id} className="object-cover h-64" src={elem.media_url} controls={true}></video>
+                        if ( elem.mediaType === "video" ) {
+                            return <video key={index} className="object-cover h-64" src={elem.mediaURL} controls={true}></video>
                         }
                     })}
                 </div>

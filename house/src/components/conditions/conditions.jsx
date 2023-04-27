@@ -2,11 +2,11 @@ import React from "react";
 
 const Conditions = ({ place }) => {
 
-    const { site_info } = place
+    const { siteInfo } = place
     return (
         <section className="mt-2">
             <h3 className="text-md font-semibold">Condizioni</h3>
-            <p>{site_info.conditions}</p>
+            <p>{siteInfo.conditions ? siteInfo.conditions : "Descrivi in che condizioni si trova il posto"}</p>
         </section>
     )
 }

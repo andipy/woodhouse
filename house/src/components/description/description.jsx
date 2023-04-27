@@ -6,10 +6,10 @@ const Description = ({ place }) => {
 
     return (
         <div id="description" className="flex flex-col gap-2 md:w-1/2">
-            <p className="text-md">{description}</p>
+            <p className="text-md">{description ? description : "Scrivi una descrizione"}</p>
             <div className="flex items-center gap-2 font-semibold">
                 <h4>Rating</h4>
-                <span>{rating}/7</span>
+                <span>{rating ? rating : "Dai un rating generale a questo posto"}/10</span>
             </div>
         </div>
     )

@@ -7,8 +7,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = useState(null);
-
-    useEffect(()=>{
+    useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
@@ -19,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
                 console.log('user is signed out');
             }
         });
-    }, [currentUser]);            
+    }, [currentUser]);
 
     return (
         <AuthContext.Provider value={[currentUser, setCurrentUser]}>

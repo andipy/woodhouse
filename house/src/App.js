@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from './contexts/auth-context/auth-context.jsx';
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "./utilities/firebase/firebase.js";
+import { CurrentUserDocContext } from "./contexts/current-user-doc-context/current-user-doc-context.jsx";
 
 import List from "./routes/list/list.jsx";
 import Detail from "./routes/detail/detail.jsx";
@@ -16,28 +15,7 @@ import UploadProfilePicture from "./routes/upload-profile-picture/upload-profile
 const App = () => {
 
   const [currentUser, setCurrentUser] = useContext(AuthContext);
-
-  const [user, setUser] = useState({});  
-  useEffect(() => {
-    const getUserDoc = async () => {
-      try {
-        const docRef = doc(db, 'users', currentUser.uid);
-        const docSnap = await getDoc(docRef);
-    
-        if (docSnap.exists()) {
-            setUser(docSnap.data())
-        } else {
-            console.log("l'utente non esiste o non è loggato")
-        }
-      } catch (error) {
-        console.log(error.message)
-      }
-    }
-
-    if (currentUser) {
-      getUserDoc();
-    }
-  }, [currentUser])
+  const [currentUserDoc, setCurrentUserDoc] = useContext(CurrentUserDocContext);
 
   const routes = [
     {
@@ -79,7 +57,7 @@ const App = () => {
     if (isPrivate) {
       if (currentUser) {
         if (currentUser.emailVerified) {
-          if (!user.photoURL) {
+          if (!currentUserDoc.photoURL) {
             return <UploadProfilePicture />
           } else {
             return element

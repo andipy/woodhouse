@@ -7,7 +7,7 @@ const Accessibility = ({ access }) => {
     return (
         <div>
             <h3 className="text-md font-semibold">Accessibilità {season}</h3>
-            <p>{description}</p>
+            <p>{description ? description : "Descrivi l'accessibilità durante questa stagione"}</p>
         </div>
     )
 }

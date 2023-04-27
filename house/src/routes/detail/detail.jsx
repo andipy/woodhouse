@@ -1,6 +1,5 @@
 import React from "react";
-
-import { allPlaces } from "../../data/mock-data";
+import { useLocation } from "react-router-dom";
 
 import Topbar from "../../components/navigation/topbar/topbar.jsx";
 import Container from "../../components/template/container/container.jsx";
@@ -23,41 +22,46 @@ import TouristicAttractiveness from "../../components/touristic-attractiveness/t
 import Accessibility from "../../components/accessibility/accessibility.jsx";
 
 const Detail = () => {
+
+    const location = useLocation();
+    const { state } = location;
+
+    console.log(state, "from detail component")
     return (
         <>
-            <Topbar place={allPlaces[0]} />
-            <Header place={allPlaces[0]} />
+            <Topbar place={state} />
+            <Header place={state} />
             
             <Container containerStyleExtention={"pb-4"}>
-                <PostedBy place={allPlaces[0]} />
+                <PostedBy place={state} />
 
                 <section className="flex flex-col md:flex-row my-2 gap-4">
-                    <GeoPosition place={allPlaces[0]} />
-                    <Description place={allPlaces[0]} />           
+                    <GeoPosition place={state} />
+                    <Description place={state} />           
                 </section>
             
                 <section className="flex flex-col md:flex-row my-2 gap-4">
                     <section className="flex flex-col gap-2 md:w-1/2">        
                         <h3 className="text-xl font-bold">Building info</h3>
-                        <Overview place={allPlaces[0]} />
-                        <Measures place={allPlaces[0]} />
-                        <PlaceUtilities place={allPlaces[0]} />
-                        <Materials place={allPlaces[0]} />
-                        <Conditions place={allPlaces[0]} />
-                        <Plans place={allPlaces[0]} />
+                        <Overview place={state} />
+                        <Measures place={state} />
+                        <PlaceUtilities place={state} />
+                        <Materials place={state} />
+                        <Conditions place={state} />
+                        <Plans place={state} />
                     </section>            
 
                     <section className="flex flex-col gap-2 md:w-1/2">
                         <h3 className="text-xl font-bold">Selling info</h3>
-                        <SellingChips place={allPlaces[0]} />
-                        <ReasonOfSale place={allPlaces[0]} />
+                        <SellingChips place={state} />
+                        <ReasonOfSale place={state} />
 
                         <section id="contacts" className="flex flex-col gap-2">
                             <h3 className="text-xl font-bold">Contatti</h3>
                             <div id="contacts" className="flex flex-col md:flex-row gap-4 w-full">
-                                {allPlaces[0].sale_info.contacts.map(contact => {
+                                {state.saleInfo.contacts.map((contact, index) => {
                                     return (
-                                        <Contact contact={contact} />
+                                        <Contact key={index} contact={contact} />
                                     )
                                 })}
                             </div>
@@ -68,18 +72,18 @@ const Detail = () => {
                 <section className="my-10">
                     <h3 className="text-xl font-bold">Appetibilità turistica</h3>
                     <section className="flex flex-col md:flex-row gap-4">
-                        <TouristicAttractiveness place={allPlaces[0]} />
+                        <TouristicAttractiveness place={state} />
                         <div className="flex flex-col gap-2 mt-2 md:w-1/2">
-                            {allPlaces[0].accessibily.map(access => {
+                            {state.accessibily.map((access, index) => {
                                 return (
-                                    <Accessibility access={access} />
+                                    <Accessibility key={index} access={access} />
                                 )
                             })}
                         </div>
                     </section>
                 </section>
 
-                <Vegetation vegetation={allPlaces[0].vegetation} />
+                <Vegetation place={state} />
                 
                 <Posts />                
             </Container>

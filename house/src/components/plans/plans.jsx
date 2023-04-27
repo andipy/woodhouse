@@ -4,7 +4,7 @@ import IconPlans from "../../assets/icons/icon-plans.svg";
 
 const Plans = ({ place }) => {
 
-    const { site_info } = place;
+    const { siteInfo } = place;
     
     return (
         <section className="mt-2 flex items-center py-1 px-2 rounded-full bg-sky-200 self-start gap-1">

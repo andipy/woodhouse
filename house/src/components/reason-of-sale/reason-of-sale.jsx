@@ -2,12 +2,17 @@ import React from "react";
 
 const ReasonOfSale = ({ place }) => {
 
-    const { sale_info } = place;
+    const { saleInfo } = place;
 
     return (
         <>
-            <p>{sale_info.reason_of_sale}</p>
-            <a className="underline text-cyan-700" href={sale_info.adv_url} target="blank">Link all'annuncio</a>
+            <p>{saleInfo.reasonOfSale ? saleInfo.reasonOfSale : "Spiega il motivo della vendita"}</p>
+            {saleInfo.advURLs.map((url, index) => {
+                return (
+                    <a key={index} className="underline text-cyan-700" href={url} target="blank">Link all'annuncio</a>
+                )
+            })}
+            
         </>
     )
 }

@@ -5,14 +5,17 @@ import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import { AuthContextProvider } from './contexts/auth-context/auth-context.jsx';
+import { CurrentUserDocContextProvider } from './contexts/current-user-doc-context/current-user-doc-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <CurrentUserDocContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CurrentUserDocContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
 );
