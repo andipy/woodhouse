@@ -26,7 +26,6 @@ const Detail = () => {
     const location = useLocation();
     const { state } = location;
 
-    console.log(state, "from detail component")
     return (
         <>
             <Topbar place={state} />

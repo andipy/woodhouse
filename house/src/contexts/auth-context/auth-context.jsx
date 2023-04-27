@@ -12,7 +12,6 @@ export const AuthContextProvider = ({ children }) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
                 setCurrentUser(user);
-                console.log(currentUser, "from auth context");
             } else {
                 // User is signed out
                 console.log('user is signed out');

@@ -58,11 +58,11 @@ const Topbar = ({ topbarStyleExtention, place }) => {
                     </div>
                 }
 
-                {!isPlacesList && !isEdit &&
+                {/* {!isPlacesList && !isEdit &&
                     <button className="py-2 px-4 bg-purple-600 text-white rounded-md text-sm">
                         + Add media
                     </button>
-                }
+                } */}
                 {isPlacesList &&
                     <button
                         className="py-2 px-4 bg-purple-600 text-white rounded-md text-sm"

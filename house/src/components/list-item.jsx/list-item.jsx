@@ -1,23 +1,25 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import House from "../../assets/images/house_01_01.jpg"
+import IconImage from "../../assets/icons/icon-image.svg"
 
 const ListItem = ({ place }) => {
-    const { placeID, name, description, rating, location, siteInfo, saleInfo } = place;
+    const { placeID, name, description, rating, location, siteInfo, saleInfo, media } = place;
 
     const navigate = useNavigate();
+
+    console.log(media, "from list-item")
 
     return (        
         <div
             className="flex flex-col md:flex-row gap-4 py-4 px-4 rounded-md border border-solid border-gray-300 hover:shadow-xl hover:border-none"
             onClick={() => navigate(`/places/${placeID}`, {state: place})}
         >
-            <img className="w-100 md:w-44 h-44 object-cover shrink-0 rounded-md" src={House} alt="" />
+            <img className="w-100 md:w-44 h-44 object-cover shrink-0 rounded-md" src={media.length > 0 ? media[0].mediaURL : IconImage} alt="" />
             <div className="flex flex-col gap-2">
                 <div className="flex gap-4 items-center">
-                    <h3 className="text-xl font-semibold">{name ? name : "Dai un nome al posto"}</h3>
-                    <span className="font-semibold">{rating ? `Rating: ${ rating}/10` : "Rating ancora da assegnare"}</span>
+                    <h3 className="text-xl font-semibold">{name ? name : "Posto senza nome"}</h3>
+                    <span className="font-semibold">{rating ? `Rating: ${rating}/10` : "Rating ancora da assegnare"}</span>
                 </div>
                 <p className="text-sm">{description ? description : "Descrivi questo posto"}</p>
                 <div className="flex gap-1 items-center">

@@ -67,7 +67,7 @@ const LogInForm = () => {
                     />
                 )
             })}
-            <button>Access</button>
+            <button className="btn-primary-enabled">Access</button>
         </form>
     )
 }

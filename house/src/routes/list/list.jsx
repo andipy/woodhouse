@@ -7,7 +7,6 @@ import { db } from "../../utilities/firebase/firebase.js";
 import Container from "../../components/template/container/container.jsx";
 import Topbar from "../../components/navigation/topbar/topbar.jsx";
 import ListItem from "../../components/list-item.jsx/list-item.jsx";
-import { allPlaces } from "../../data/mock-data.js";
 
 const List = () => {
 
@@ -26,17 +25,15 @@ const List = () => {
     useEffect(() => {
         const q = query(collection(db, 'places'), orderBy("createdAt", "desc"))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
-            //const placeDocs = [];
+            let placesArray = [];
             querySnapshot.forEach((doc) => {
-                console.log(doc.data())
-                setPlaces([...places, {
+                let placeObj = {
+                    ...doc.data(),
                     placeID: doc.id,
-                    ...doc.data(),                   
-                }])
-                //placeDocs.push(doc.data());
+                };
+                placesArray.push(placeObj)
             });
-            //setPlaces(placeDocs);
-            //console.log("Current cities in CA: ", placeDocs.join(", "));
+            setPlaces(placesArray);
         });
     }, [])
     
@@ -44,7 +41,7 @@ const List = () => {
 
     return (
         <>
-            <Topbar place={allPlaces[0]} />
+            <Topbar place={places} />
             <Container containerStyleExtention={"pt-[60px]"}>
                 {places.map(place => {
                     return (
@@ -54,7 +51,7 @@ const List = () => {
                         />
                     )
                 })}
-                <button onClick={handleSignOut}>Log out</button>
+                <button className="btn-secondary-enabled" onClick={handleSignOut}>Log out</button>
             </Container>
         </>
     )

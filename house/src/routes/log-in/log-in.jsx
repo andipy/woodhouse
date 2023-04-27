@@ -13,8 +13,8 @@ const LogIn = () => {
             <h1>Access your account</h1>
             <p>Log in with email and password</p>
             <LogInForm />
-            <button onClick={() => navigate("/sign-up")}>Go to sign up</button>
-            <button onClick={() => navigate("/your-email-to-recover-password")}>Recover password</button>
+            <button className="btn-secondary-enabled" onClick={() => navigate("/sign-up")}>Go to sign up</button>
+            <button className="btn-secondary-enabled" onClick={() => navigate("/your-email-to-recover-password")}>Recover password</button>
         </Container>
     )
 }

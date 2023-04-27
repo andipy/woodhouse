@@ -13,7 +13,7 @@ const SignUp = () => {
             <h1>Create your account</h1>
             <p>Sign up with email and password</p>
             <SignUpForm />
-            <button onClick={() => navigate("/log-in")}>Go to login</button>
+            <button className="btn-secondary-enabled" onClick={() => navigate("/log-in")}>Go to login</button>
         </Container>
     )
 }

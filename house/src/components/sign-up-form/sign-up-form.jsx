@@ -115,7 +115,7 @@ const SignUpForm = () => {
                     />
                 )
             })}
-            <button>Create account</button>
+            <button className="btn-primary-enabled">Create account</button>
         </form>
     )
 }
