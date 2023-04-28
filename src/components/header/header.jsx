@@ -101,6 +101,7 @@ const Header = ({ place }) => {
                     </div>
                     <form className="small-form" onSubmit={handleFormSubmit}>
                         <input
+                            className="w-[40%]"
                             label={input.label}
                             name={input.name}
                             type={input.type}
