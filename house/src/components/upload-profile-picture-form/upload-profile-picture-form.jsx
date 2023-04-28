@@ -89,7 +89,7 @@ const UploadProfilePictureForm = () => {
                 required={input.required}
                 onChange={handleInputChange}
             />
-            <button>{isUploading ? "Sto caricando, attendi" : "Carica immagine"}</button>
+            <button className="btn-primary-enabled">{isUploading ? "Sto caricando, attendi" : "Carica immagine"}</button>
         </form>
     )
 }

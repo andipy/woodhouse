@@ -6,8 +6,8 @@ import Container from "../../components/template/container/container.jsx";
 const ResetPassword = () => {
     return (
         <Container>
-            <h1>Recover your password</h1>
-            <p>You will receive an email to reset your password</p>
+            <h1 className="text-2xl font-semibold">Recover your password</h1>
+            <p className="mb-4">You will receive an email to reset your password</p>
             <ResetPasswordForm />
         </Container>        
     )

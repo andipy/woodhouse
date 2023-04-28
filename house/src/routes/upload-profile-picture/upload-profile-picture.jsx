@@ -6,7 +6,8 @@ import UploadProfilePictureForm from "../../components/upload-profile-picture-fo
 const UploadProfilePicture = () => {
     return (
         <Container>
-            <h1>Upload a profile picture to continue, famme vede la tua faccia</h1>
+            <h1 className="text-2xl font-semibold">Upload a profile picture to continue</h1>
+            <p className="mb-4">We need to know who you are, plus this step will complete your profile!</p>
             <UploadProfilePictureForm />            
         </Container>
     )

@@ -65,7 +65,7 @@ const ResetPasswordForm = () => {
                     />
                 )
             })}
-            <button>Send email to reset password</button>
+            <button className="btn-primary-enabled">Send email to reset password</button>
         </form>
     )
 }

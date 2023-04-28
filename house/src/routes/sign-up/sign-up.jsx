@@ -10,8 +10,8 @@ const SignUp = () => {
 
     return (
         <Container>
-            <h1>Create your account</h1>
-            <p>Sign up with email and password</p>
+            <h1 className="text-2xl font-semibold">Create your account</h1>
+            <p className="mb-4">Sign up with email and password</p>
             <SignUpForm />
             <button className="btn-secondary-enabled" onClick={() => navigate("/log-in")}>Go to login</button>
         </Container>

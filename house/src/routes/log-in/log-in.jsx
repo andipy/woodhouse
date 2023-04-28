@@ -10,8 +10,8 @@ const LogIn = () => {
 
     return (
         <Container>
-            <h1>Access your account</h1>
-            <p>Log in with email and password</p>
+            <h1 className="text-2xl font-semibold">Access your account</h1>
+            <p className="mb-4">Log in with email and password</p>
             <LogInForm />
             <button className="btn-secondary-enabled" onClick={() => navigate("/sign-up")}>Go to sign up</button>
             <button className="btn-secondary-enabled" onClick={() => navigate("/your-email-to-recover-password")}>Recover password</button>
