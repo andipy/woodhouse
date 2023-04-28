@@ -10,7 +10,7 @@ const ListItem = ({ place }) => {
 
     return (        
         <div
-            className="flex flex-col md:flex-row gap-4 py-4 px-4 rounded-md border border-solid border-gray-300 hover:shadow-xl hover:border-none"
+            className="flex flex-col md:flex-row gap-4 py-4 px-4 rounded-md border border-solid border-gray-300 hover:shadow-xl hover:border-none mb-4"
             onClick={() => navigate(`/places/${placeID}`, {state: place})}
         >
             <img className="w-100 md:w-44 h-44 object-cover shrink-0 rounded-md" src={media.length > 0 ? media[0].mediaURL : IconImage} alt="" />

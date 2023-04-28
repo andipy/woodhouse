@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import IconArticle from "../../assets/icons/icon-article.svg"
 
 const Description = ({ place }) => {
 
-    const { description, rating } = place;
+    const navigate = useNavigate();
+    const { description, rating, placeID } = place;
 
     const [isEmptyState, setIsEmptyState] = useState(false);
     useEffect(() => {
@@ -16,7 +18,10 @@ const Description = ({ place }) => {
     return (
         <>
         {isEmptyState &&
-            <div id="description" className="flex flex-col items-center justify-center gap-2 md:w-1/2 border border-dashed rounded-lg border-gray-400 min-h-40 py-4 hover:shadow-xl hover:border-gray-300">
+            <div
+                className="flex flex-col items-center justify-center gap-2 md:w-1/2 border border-dashed rounded-lg border-gray-400 min-h-40 py-4 hover:shadow-xl hover:border-gray-300"
+                onClick={() => navigate(`/places/${placeID}/edit-description-and-name`, { state: place })}
+            >
                 <img className="w-10" src={IconArticle} alt="" />
                 <p className="w-2/3 text-center">Aggiungi una descrizione e un rating</p>
             </div>

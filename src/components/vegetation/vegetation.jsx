@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CurrentUserDocContext } from "../../contexts/current-user-doc-context/current-user-doc-context";
 
 import { db } from "../../utilities/firebase/firebase.js";
@@ -7,6 +8,8 @@ import { storage } from "../../utilities/firebase/firebase.js";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const Vegetation = ({ place }) => {
+
+    const navigate = useNavigate()
 
     const { vegetation, placeID } = place;
     const [currentUserDoc, setCurrentUserDoc] = useContext(CurrentUserDocContext);
@@ -60,7 +63,7 @@ const Vegetation = ({ place }) => {
             }
 
             setIsUploading(false);
-            //window.location.reload(true);
+            navigate(-1);
         }
     }
 

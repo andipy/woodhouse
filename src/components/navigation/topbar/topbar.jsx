@@ -16,7 +16,7 @@ const Topbar = ({ topbarStyleExtention, place }) => {
     const [user, setUser] = useContext(AuthContext);
     const [currentUserDoc, setCurrentUserDoc] = useContext(CurrentUserDocContext);
 
-    const { name } = place;
+    //const { name } = place;
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -71,9 +71,9 @@ const Topbar = ({ topbarStyleExtention, place }) => {
                         + Add new place
                     </button>
                 }
-                {isEdit &&
+                {/* {isEdit &&
                     <h1 className="text-lg md:text-2xl text-black font-bold">{name}</h1>
-                }
+                } */}
             </Container>
         </nav>
     )

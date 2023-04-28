@@ -11,6 +11,7 @@ import LogIn from "./routes/log-in/log-in.jsx";
 import ResetPassword from "./routes/reset-password/reset-password.jsx";
 import VerifyYourEmail from "./routes/verify-your-email/verify-your-email.jsx";
 import UploadProfilePicture from "./routes/upload-profile-picture/upload-profile-picture.jsx";
+import EditDescription from "./routes/edit-description/edit-description.jsx"
 
 const App = () => {
 
@@ -35,7 +36,7 @@ const App = () => {
       element: <Detail />,
       isPrivate: true
     },{
-      slug: "places/:placeId/edit-where",
+      slug: "places/:placeID/edit-where",
       element: <EditWhere />,
       isPrivate: true
     },{
@@ -49,6 +50,10 @@ const App = () => {
     },{
       slug: "upload-profile-picture",
       element: <UploadProfilePicture />,
+      isPrivate: true
+    },{
+      slug: "places/:placeID/edit-description-and-name",
+      element: <EditDescription />,
       isPrivate: true
     }
   ]

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOutCurrentUser } from "../../utilities/firebase/sign-out/sign-out.js";
-import { doc, query, collection, onSnapshot, orderBy } from "firebase/firestore";
+import { query, collection, onSnapshot, orderBy } from "firebase/firestore";
 import { db } from "../../utilities/firebase/firebase.js";
 
 import Container from "../../components/template/container/container.jsx";
