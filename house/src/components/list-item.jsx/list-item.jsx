@@ -8,8 +8,6 @@ const ListItem = ({ place }) => {
 
     const navigate = useNavigate();
 
-    console.log(media, "from list-item")
-
     return (        
         <div
             className="flex flex-col md:flex-row gap-4 py-4 px-4 rounded-md border border-solid border-gray-300 hover:shadow-xl hover:border-none"

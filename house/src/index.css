@@ -55,6 +55,15 @@ code {
   color: rgb(147 51 234);
   border-radius: .25em
 }
+.btn-secondary-enabled-small {
+  width: 50%;
+  padding: 2%;
+  margin: 2% 0;
+  border: 1px solid rgb(147 51 234);
+  background-color: none;
+  color: rgb(147 51 234);
+  border-radius: .25em
+}
 
 .small-form {
   position: absolute;

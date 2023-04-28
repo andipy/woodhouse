@@ -84,7 +84,7 @@ const Detail = () => {
 
                 <Vegetation place={state} />
                 
-                <Posts />                
+                {/* <Posts />                 */}
             </Container>
         </>
     )

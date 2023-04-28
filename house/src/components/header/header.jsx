@@ -40,7 +40,6 @@ const Header = ({ place }) => {
                     })
                     .then(downloadURL => {
                         const docRef = doc(db, 'places', placeID);
-                        console.log(placeID, "from header")
                         return updateDoc(docRef, {
                             media: arrayUnion({
                                 createdAt: Timestamp.now(),
@@ -59,11 +58,9 @@ const Header = ({ place }) => {
             }
 
             setIsUploading(false);
-            navigate(-1)
+            navigate(-1);
         }
     }
-
-    console.log(place, "from header")    ;
 
     const input = {
         label: null,
@@ -89,22 +86,21 @@ const Header = ({ place }) => {
                         onChange={handleInputChange}
                         placeholder={input.placeholder}
                     />
-                    <button className="btn-secondary-enabled absolute bottom-10">Carica immagine</button>
+                    <button className="btn-secondary-enabled-small absolute bottom-10">Carica immagine</button>
                 </form>
             }
             {media.length >= 1 &&
                 <>
                     <div className="flex w-[100vw] overflow-x-scroll">
-                        {media.map(img => {
+                        {media.map((img, index) => {
                             return (
-                                <img className="w-full h-[40vh] md:h-[50vh] object-cover" src={img.mediaURL} />
+                                <img key={index} className="w-full h-[40vh] md:h-[50vh] object-cover" src={img.mediaURL} />
                             )
                         })}
                         
                     </div>
                     <form className="small-form" onSubmit={handleFormSubmit}>
                         <input
-                            className="small-input"
                             label={input.label}
                             name={input.name}
                             type={input.type}
@@ -112,7 +108,7 @@ const Header = ({ place }) => {
                             onChange={handleInputChange}
                             placeholder={input.placeholder}
                         />
-                        <button className="btn-secondary-enabled">Carica immagine</button>
+                        <button className="btn-secondary-enabled-small">Carica immagine</button>
                     </form>
                 </>
             }            
