@@ -6,21 +6,30 @@ import IconSaveInactive from "../../assets/icons/icon-save-inactive.svg";
 
 const Post = ({ post }) => {
     
-    const { id, created_at, author_avatar, author_username, media, content, comments } = post;
+    const { createdAt, authorPhotoURL, authorDisplayName, mediaURL, content, mediaType } = post;
 
     return (
-        <article key={id} className="mb-6">
+        <article className="mb-6">
             <div id="posted-by" className="flex flex-col gap-1 w-full md:w-1/4">
                 <div className="flex items-center gap-2">
-                    <img className="w-10 h-10 rounded-full" src={author_avatar} alt="" />
+                    <img className="w-10 h-10 rounded-full" src={authorPhotoURL} alt="" />
                     <div className="flex flex-col">
-                        <span className="font-semibold">{author_username}</span>
-                        <span className="text-xs">{created_at}</span>
+                        <span className="font-semibold">{authorDisplayName}</span>
+                        <span className="text-xs">{Date(createdAt)}</span>
                     </div>
                 </div>                
             </div>
 
-            {media.length === 1 &&
+            <div className="mt-2">
+                    {mediaType.includes("image") &&
+                         <img className="object-cover w-full" src={mediaURL} alt="" />
+                    }
+                    {mediaType.includes("video") &&
+                        <video className="object-cover w-full" src={mediaURL} controls={true}></video>
+                    }                  
+            </div>
+
+            {/* {media.length === 1 &&
                 <div className="mt-2">
                     {media.map(elem => {
                         if ( elem.media_type === "image" ) {
@@ -43,7 +52,7 @@ const Post = ({ post }) => {
                         }
                     })}
                 </div>
-            }            
+            }             */}
 
             <p className="text-md font-semibold mt-2">{content}</p>
 
@@ -57,7 +66,7 @@ const Post = ({ post }) => {
                 </div>
             </div>
 
-            {comments.length > 0 &&
+            {/* {comments.length > 0 &&
                 <section>
                     {comments?.map(comment => {
                         return (
@@ -75,7 +84,7 @@ const Post = ({ post }) => {
                     })}
                     <p className="font-bold text-sm">Vedi tutti e {comments.length} i commenti</p>
                 </section>
-            }
+            } */}
         </article>
     )
 }

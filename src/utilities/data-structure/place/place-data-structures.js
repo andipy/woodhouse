@@ -136,6 +136,7 @@ export const placeDataStructure = {
 }
 
 export const mediaDataStructure = {
+    placeID: "",
     createdAt: Timestamp.now(),
     updatedAt: Timestamp.now(),
     authorUID: "",

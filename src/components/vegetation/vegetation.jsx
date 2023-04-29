@@ -35,7 +35,7 @@ const Vegetation = ({ place }) => {
         if (!isUploading) {
             setIsUploading(true);
 
-            const storageRef = ref(storage, `${inputMedia.name}${Math.floor(Math.random()*1000000) + Math.floor(Math.random()*1000000)}`);
+            const storageRef = ref(storage, `${placeID}/vegetation/${inputMedia.name}${Math.floor(Math.random()*1000000) + Math.floor(Math.random()*1000000)}`);
 
             if (inputMedia) {
                 try {
@@ -129,7 +129,7 @@ const Vegetation = ({ place }) => {
                         onChange={handleInputChange}
                         placeholder={input.placeholder}
                     />
-                    <button className="btn-secondary-enabled">Carica immagine</button>
+                    <button className="btn-secondary-enabled">{isUploading ? "Sto caricando, attendi..." : "Carica immagine"}</button>
                 </form>
 
             

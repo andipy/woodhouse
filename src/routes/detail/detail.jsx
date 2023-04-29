@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Topbar from "../../components/navigation/topbar/topbar.jsx";
 import Container from "../../components/template/container/container.jsx";
 import Header from "../../components/header/header.jsx";
-import Posts from "../../components/posts/posts.jsx";
+import Feed from "../../components/feed/feed.jsx";
 import Vegetation from "../../components/vegetation/vegetation.jsx";
 import PostedBy from "../../components/posted-by/posted-by.jsx";
 import GeoPosition from "../../components/geographic-position/geographic-position.jsx";
@@ -84,7 +84,7 @@ const Detail = () => {
 
                 <Vegetation place={state} />
                 
-                {/* <Posts />                 */}
+                <Feed place={state} />                
             </Container>
         </>
     )

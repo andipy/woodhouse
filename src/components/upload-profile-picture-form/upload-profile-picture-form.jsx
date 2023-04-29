@@ -45,7 +45,7 @@ const UploadProfilePictureForm = () => {
         if (!isUploading) {
             setIsUploading(true);
 
-            const storageRef = ref(storage, `${media.name}${Math.floor(Math.random()*1000000) + Math.floor(Math.random()*1000000)}`);
+            const storageRef = ref(storage, `avatars/${media.name}${Math.floor(Math.random()*1000000) + Math.floor(Math.random()*1000000)}`);
 
             if (media) {
                 try {
